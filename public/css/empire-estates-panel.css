@@ -1,0 +1,425 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --primary-gold: #ca8637;
+    --gold: linear-gradient(90deg, rgba(225, 181, 93, 1) 0%, #c3772b 29%, #c88133 41%, #cf903f 51%, #d29745 62%, #ca8637 78%, #dba853 100%);
+    --primary-font: "Montserrat", sans-serif;
+}
+
+@font-face {
+    font-family: 'optima';
+    src: url('/assets/fonts/OPTIMA.TTF') format('truetype');
+}
+
+.deep-purple.darken-3 {
+    background: #282827 !important;
+}
+
+.deep-purple.darken-4 {
+    background: #19181c !important;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--white) !important;
+}
+
+.btn-large {
+    /* width: 20%; */
+    height: 3rem;
+    font-size: 25px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.black-overlay {
+    width: 70%;
+    background: black;
+    opacity: 84%;
+    padding: 33px;
+}
+
+blockquote {
+    border-color: var(--primary-gold);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h1.title,
+.footer-copyright a {
+    font-family: 'optima';
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.page-footer {
+    z-index: 100;
+}
+.card-text {
+    font-family: 'OptimaNovaLTProRegular', sans-serif !important;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+/* start welcome animation */
+
+body.welcome {
+    background: var(--black);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.welcome .splash {
+    height: 0px;
+    padding: 0px;
+    border: 130em solid var(--primary-gold);
+    position: fixed;
+    left: 50%;
+    top: 100%;
+    display: block;
+    box-sizing: initial;
+    overflow: hidden;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+    background: #000;
+    width: 56px;
+    height: 56px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+/* moveIn */
+.welcome header,
+.welcome a.btn {
+    opacity: 0;
+    animation: moveIn 2s 3.1s ease forwards;
+}
+
+.welcome .menu {
+    opacity: 0;
+    animation: moveIn 2s 0.1s ease forwards;
+}
+
+.welcome a.opacity1 {
+    opacity: 0;
+    animation: moveIn 2s 0.1s ease forwards;
+}
+
+.menu a.btn-gold {
+    margin: 40px 0px;
+    width: 50%;
+}
+
+@keyframes init {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 56px;
+        height: 56px;
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes puff {
+    0% {
+        top: 100%;
+        height: 0px;
+        padding: 0px;
+    }
+
+    100% {
+        top: 50%;
+        height: 100%;
+        padding: 0px 100%;
+    }
+}
+
+@keyframes borderRadius {
+    0% {
+        border-radius: 50%;
+    }
+
+    100% {
+        border-radius: 0px;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        top: 50%;
+    }
+
+    50% {
+        top: 40%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        background: var(--black);
+        top: 100%;
+    }
+
+    50% {
+        top: 40%;
+    }
+
+    100% {
+        top: 50%;
+        background: var(--primary-gold);
+    }
+}
+
+@keyframes materia {
+    0% {
+        background: var(--gold);
+    }
+
+    50% {
+        background: var(--gold);
+        top: 26px;
+    }
+
+    100% {
+        background: var(--primary-gold);
+        width: 100%;
+        height: 64px;
+        border-radius: 0px;
+        top: 26px;
+    }
+}
+
+@keyframes moveIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none !important;
+    }
+    
+}
+
+.option-card {
+    padding: 30px 100px;
+    transition: ease-in-out 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    height: 100%;
+    text-align: center;
+    color: rgb(255 255 255 / 95%);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 87%), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: #212529d6;
+}
+
+.option-card:hover {
+    border-color: var(--primary-gold);
+}
+
+.option-card i {
+    font-size: 45px;
+    color: var(--gold);
+}
+
+.option-card .text {
+    font-size: 20px;
+    font-family: 'optima';
+    margin: 4px 0px;
+}
+
+.option-card .text:hover {
+    background: var(--gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu a {
+    text-decoration: none;
+}
+
+.option-card .card-body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after,
+.autoplay-progress {
+    color: var(--white) !important;
+}
+
+.swiper-pagination-bullet {
+    background: var(--white);
+    width: 20px;
+    height: 20px;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--white);
+}
+
+.autoplay-progress svg {
+    stroke: var(--white) !important;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.342);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.play-button::before {
+    content: "\f04b";
+    font-family: FontAwesome;
+    font-size: 30px;
+    color: #fff;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 76%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+.btn-gradient-gold:hover{
+    background: linear-gradient(238deg, rgba(255, 227, 141, 1) 16%, rgba(186, 136, 89, 1) 72%);
+    transition: 0.5s;
+    color: white;
+}
+.btn-gradient-gold{
+    background: linear-gradient(45deg, rgba(255, 227, 141, 1) 16%, rgba(186, 136, 89, 1) 72%);
+    color: #000000;
+    font-weight: 900;
+    padding: 0.3rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    transition: .5s;
+  
+}
+.splash::after{
+    z-index: 0;
+}
+@media (max-width: 768px) {
+    .page-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+    }
+
+    .main-menu .menu,
+    .renders-menu .menu,
+    .valign-wrapper.overflow-md .menu,
+    .valign-wrapper.overflow-md .menu,
+    .valign-wrapper.overflow-md .menu,
+    .studio-menu .menu {
+        overflow: auto !important;
+    }
+
+    .main-menu .menu .row,
+    .renders-menu .menu .row,
+    .valign-wrapper.overflow-md .main-menu .row {
+        margin: 17rem 0px 46px 0px;
+    }
+    .valign-wrapper .main-banner {
+        padding-left: 8px !important;
+    }
+    .valign-wrapper.bg-sketch-img {
+        background: url('/assets/images/building-sketch.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .sketch-img {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .page-footer {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+    }
+
+
+    .main-menu .menu,
+    .renders-menu .menu,
+    .valign-wrapper.overflow-md .main-menu {
+        overflow: auto !important;
+    }
+    .valign-wrapper.overflow-md .main-menu .center-align .row {
+        margin: 17rem 0px 46px 0px;
+    }
+    .main-menu .menu .row{
+        margin: 54rem 0px 46px 0px;
+    }
+    .renders-menu .menu .row{
+        margin: 25rem 0px 46px 0px;
+    }
+
+}
+
